@@ -1,10 +1,12 @@
 import React from 'react'
 import Layout from '../components/layout'
 import { RiInstagramLine } from 'react-icons/ri';
+import SEO from '../components/resuable/SEO';
 
 const index = () => {
     return (
         <Layout pageClassName="homePage">
+            <SEO title="Home" />
             <header className="jumbotron">
                 <div className="jumbotron-overlay">
                     <div className="jumbotron-content">
