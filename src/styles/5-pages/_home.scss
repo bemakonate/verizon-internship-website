@@ -1,0 +1,175 @@
+.homePage{
+    .jumbotron{
+        height:60vh;
+        position:relative;
+    }
+
+    .jumbotron-overlay{
+        @include square(100%);
+        background:rgba(white, .5);
+        color:black;
+    }
+
+    .jumbotron-title{
+        margin:0;
+        color:black;
+        line-height:1.25;
+    }
+
+    .jumbotron-content{
+        @include flex($align:center);
+        @include square(100%);
+    }
+
+    .jumbotron-bg{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        z-index:-1;
+    }
+
+    .mission-container,
+    .solution__container,
+    .social__container{
+        padding:40px 1rem;
+    }
+
+    .mission-content{
+        margin-bottom:40px;
+    }
+    
+    .mission-img__container{
+        @include scalableImg($imgClassName: 'mission-img', $height:60%, $brdr-radius:2px);
+        width: 100%;
+      }
+  
+    
+   
+    .solution__app-icon{
+        @include square(100px);
+        display:block;
+        margin:35px auto;
+    }
+
+    .social__container{
+        background:gray;
+    }
+
+    .social-title{
+        margin-bottom:8px; 
+    }
+
+    .instagram-link{
+        font-size:50px;
+        margin-left:auto;
+        display:block;
+        margin-right:30px;
+    }
+
+
+    //skills
+
+    .skills-title{
+        margin-bottom:40px;
+    }
+
+    .skill-container{
+        text-align:center;
+        padding:40px 1rem;
+    }
+
+    .skill-container__title{
+        text-transform: uppercase;
+    }
+
+    .skill-container__desc{
+        font-weight:400;
+    }
+
+    .skill-fact__stat{
+        font-size: 30px;
+        font-weight: 500;
+        margin-top:10px;
+        margin-bottom: 10px;
+    }
+
+    .skill-fact__stat-desc{
+        margin:0;
+        font-size:14px;
+    }
+
+    .skill-communication{
+        background:rgb(34, 34, 34);
+        color:white;
+    }
+
+    .skill-communication .skill-container__title{
+        color:white;
+    }
+
+    @include mq('med'){
+        .jumbotron-title{
+            font-size:$font-xl;
+        }
+
+        .mission-container{
+            padding:0;
+            display:grid;
+            grid-template-columns:1fr 2fr;
+        }
+
+        .mission-content{
+            padding:5vw;
+            margin-bottom:0;
+            order:2;
+        }
+
+        .mission-img__container{
+            @include scalableImg($imgClassName: 'mission-img', $height:100%, $brdr-radius:0); 
+            order:1;
+        }
+        
+        .solution-social__row{
+            display:grid;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .social__container{
+            @include flex($dir:column);
+            padding:5vw;
+        }
+
+        .instagram-link{
+            margin-top:20px;
+            font-size:60px;
+        }
+
+        .solution__container{
+            padding:5vw;
+        }
+
+        .skills-container{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .skill-container{
+            padding:5vw;
+        }
+
+    }
+
+    @include mq('large'){
+        .solution-social__row{
+            grid-template-columns: 3fr 2fr;
+        }
+
+        .mission-content{
+            grid-template-columns: 2fr 3fr;
+        }
+    }
+}
+
+

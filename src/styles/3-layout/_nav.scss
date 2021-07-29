@@ -1,0 +1,51 @@
+.navbar{
+    display:none;
+}
+
+
+@include mq('med'){
+
+    .navbar{
+        @include flex($align:center);
+        @include position($p:fixed,$top:0,$left:0,$zIndex:10);
+        width:100%;
+        background:rgb(48, 48, 48);
+        color:white;
+        height:$navbar-height;
+        padding:0 5vw;
+        
+    }
+    
+    .nav__title{
+        margin:0;
+        font-size:20px;
+        margin-right:30px;
+        font-weight:600;
+        color:white;
+    }
+    
+    .nav__links{
+        width:60vw;
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        height:100%;
+    }
+    
+    .nav__link{
+       @include flex($center:true);
+        height:100%;
+        font-weight:400;
+        &:hover{
+            color:$color-theme-tertiary;
+        }
+    }
+}
+
+@include mq('large'){
+    .nav__links{
+        width:40vw;
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        height:100%;
+    }
+}

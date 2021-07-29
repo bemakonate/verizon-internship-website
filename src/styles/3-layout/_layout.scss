@@ -1,0 +1,26 @@
+.layout {
+    position: relative;
+}
+
+.site-content {
+    @include flex($dir:column);
+    min-height: 100vh;
+}
+
+.layout-padding {
+    padding-top: 70px;
+}
+
+.footer-margin{
+    margin-top:40px;
+}
+
+@include mq('med'){
+    .layout{
+        padding-top:$navbar-height;
+    }
+
+    .footer-margin{
+        margin-top:80px;
+    }
+}

@@ -1,0 +1,22 @@
+//Remember that your classes need to start with .js-
+
+.js-hide {
+    display: none;
+}
+
+.js__stop-overflow{
+    overflow:hidden;
+}
+
+.js__minimize-height{
+    height:0;
+    overflow:hidden;
+}
+
+.js__translate-position{
+    transform: translateY(-100vh);
+}
+
+.js-og-position {
+    transform: translate(0);
+}
