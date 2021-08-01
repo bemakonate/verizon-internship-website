@@ -6,13 +6,13 @@
 
     .jumbotron-overlay{
         @include square(100%);
-        background:rgba(white, .5);
+        background:rgba(white, .8);
         color:black;
     }
 
     .jumbotron-title{
         margin:0;
-        color:black;
+        color:#63D590;
         line-height:1.25;
     }
 
@@ -30,6 +30,14 @@
         z-index:-1;
     }
 
+    .jumbotron-social{
+        position: absolute;
+        right: 10%;
+        bottom: 10%;
+        font-size: 50px;
+        color:rgb(112, 112, 112);
+    }
+
     .mission-container,
     .solution__container,
     .social__container{
@@ -38,6 +46,10 @@
 
     .mission-content{
         margin-bottom:40px;
+    }
+
+    .mission-title{
+        color:#63D590;
     }
     
     .mission-img__container{
@@ -53,12 +65,19 @@
         margin:35px auto;
     }
 
-    .social__container{
-        background:gray;
+    .solution-title{
+        color:#84dc94;
     }
+
+    .social__container{
+        background:#84dc94;
+        color:white;
+    }
+
 
     .social-title{
         margin-bottom:8px; 
+        color:white;
     }
 
     .instagram-link{
@@ -101,8 +120,16 @@
     }
 
     .skill-communication{
-        background:rgb(34, 34, 34);
+        background:#63D590;
         color:white;
+    }
+
+    .skill-empathy{
+        color: #63D590;
+    }
+
+    .skill-empathy .skill-container__title{
+        color:#63D590;
     }
 
     .skill-communication .skill-container__title{
@@ -162,6 +189,11 @@
     }
 
     @include mq('large'){
+
+        .jumbotron-social{
+            right: 20%;
+            bottom: 20%;
+        }
         .solution-social__row{
             grid-template-columns: 3fr 2fr;
         }

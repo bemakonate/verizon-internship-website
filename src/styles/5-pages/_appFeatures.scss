@@ -1,0 +1,130 @@
+$chats-iphone-width: 380px;
+
+.appFeaturesPage{
+    .jumbotron{
+        height:60vh;
+        text-align:center;
+        background:#63D590;
+        padding:40px 10vw;
+        position:relative;
+    }
+
+    .jumbotron-title{
+        color:white;
+    }
+
+    .jumbotron-iphone{
+        position:absolute;
+        width:230px;
+        height:470px;
+        left:50%;
+        margin-left:-115px;
+        bottom:-40%;
+    }
+
+    .feature-section{
+        padding-top:80px;
+        padding-bottom:80px;
+    }
+
+    .section-therapyCall{
+        padding-top:200px;
+    }
+
+    .section-therapyCall .feature-title,
+    .section-userData .feature-title{
+        color: #63D590;
+    }
+
+    .section-chats{
+        background:#63D590;
+        color:white;
+    }
+
+    .section-chats .feature-title{
+        color:white;
+    }
+
+    .therapyCall-iphone,
+    .data-iphone{
+        display:block;
+        width:265px;
+        height:525px;
+        margin:0 auto;
+    }
+
+    .chat-iphone{
+        display:block;
+        width:380px;
+        height: 670px;
+        margin:0 auto; 
+    }
+
+    @include mq('med'){
+        .jumbotron{
+            @include flex($align:center);
+            text-align:left;
+        }
+
+        .jumbotron-title{
+            width:90px;
+            margin:0;
+        }
+
+        .jumbotron-iphone{
+            left:auto;
+            right:10%;
+        }
+
+        .feature-section{
+            padding-top:70px;
+            padding-bottom:70px;
+        }
+
+
+        .section-therapyCall{
+            padding-top:200px;
+        }
+
+
+        .section-therapyCall .feature-grid,
+        .section-userData .feature-grid{
+            display:grid;
+            grid-template-columns: auto 1fr;
+            grid-gap:10vw;
+        }
+
+        .section-therapyCall .therapyCall-iphone,
+        .section-userData .data-iphone{
+            order:1;
+        }
+
+        .section-therapyCall .feature-content,
+        .section-userData .feature-content{
+            @include flex($dir:column, $just:center);
+            order:2;
+            margin-bottom:30%;
+        }
+
+        .section-chats .feature-grid{
+            display:grid;
+            grid-template-columns: 1fr 380px;
+            grid-gap:10vw;
+        }
+
+        .section-chats .chat-iphone{
+            position:absolute;
+        }
+
+        .section-chats .feature-content{
+            @include flex($dir:column, $just:center);
+            margin-bottom:40%;
+        }
+    }
+
+    @include mq('large'){
+        .jumbotron-iphone{
+            right:20%;
+        }
+    }
+}

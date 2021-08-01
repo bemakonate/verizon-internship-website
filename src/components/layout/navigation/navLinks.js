@@ -6,6 +6,10 @@ const data = [
     //     label: 'Home',
     //     link: '/'
     // },
+    {
+        label: 'App Features',
+        link: '/app-features'
+    }
 ]
 const navLinks = (props) => {
     return (

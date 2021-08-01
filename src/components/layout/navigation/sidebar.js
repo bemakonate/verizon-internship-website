@@ -9,7 +9,7 @@ const sideBar = (props) => {
 
     const showSideBar = () => setIsSideBarVisible(true);
     const hideSideBar = () => setIsSideBarVisible(false);
-    const companyName = 'Company Name';
+    const companyName = 'MMM';
     const sideBarContainerStyle = isSideBarVisible && "sideBar__drop";
     return (
         <div>
