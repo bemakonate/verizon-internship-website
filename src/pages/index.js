@@ -2,8 +2,12 @@ import React from 'react'
 import Layout from '../components/layout'
 import { RiInstagramLine } from 'react-icons/ri';
 import SEO from '../components/resuable/SEO';
+import LoadingBackdrop from '../components/resuable/loadingBackdrop';
+import axios from '../constants/axios-backend';
 
-const index = () => {
+const Index = ({ homePage }) => {
+
+
     return (
         <Layout pageClassName="homePage">
             <SEO title="Home" />
@@ -13,7 +17,7 @@ const index = () => {
                         <div className="global__container">
                             <h1 className="jumbotron-title">Mind <br /> Matter <br /> Mentality </h1>
                         </div>
-                        <RiInstagramLine className="jumbotron-social" />
+                        <a href={homePage.socialMediaLink} target="__blank"><RiInstagramLine className="jumbotron-social" /></a>
                     </div>
 
                 </div>
@@ -24,7 +28,7 @@ const index = () => {
             <section className="mission-container">
                 <div className="mission-content">
                     <h2 className="mission-title">Company Mission</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis eligendi quas facere quisquam ex unde dignissimos dolorum provident veniam! Culpa eveniet vitae iusto, magni fuga adipisci sequi. Fugit reiciendis blanditiis illo, hic dolorum earum voluptas ab voluptatibus! Corporis nam aliquam optio doloribus distinctio similique, molestias enim odio, quaerat sit culpa voluptate sunt, sapiente eos. </p>
+                    <p>{homePage.missionSection.content} </p>
                 </div>
 
 
@@ -36,21 +40,21 @@ const index = () => {
             <section className="skills">
                 <div className="skills-container">
                     <article className="skill-container skill-communication">
-                        <h3 className="skill-container__title">Communication</h3>
+                        <h3 className="skill-container__title">{homePage.skill1.title}</h3>
                         <div className="skill-fact">
-                            <p className="skill-fact__stat">77%</p>
-                            <p className="skill-fact__stat-desc ">Lorem ipsum dolor sit amet consectetur </p>
+                            <p className="skill-fact__stat">{homePage.skill1.skillStatistic}</p>
+                            <p className="skill-fact__stat-desc ">{homePage.skill1.skillStatisticLabel} </p>
                         </div>
-                        <p className="skill-container__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus eum nesciunt qui quasi mollitia! Omnis impedit fugit voluptatibus dolor placeat?</p>
+                        <p className="skill-container__desc">{homePage.skill1.skillContent}</p>
                     </article>
 
                     <article className="skill-container skill-empathy">
-                        <h3 className="skill-container__title">Empathy</h3>
+                        <h3 className="skill-container__title">{homePage.skill2.title}</h3>
                         <div className="skill-fact">
-                            <p className="skill-fact__stat">25X</p>
-                            <p className="skill-fact__stat-desc ">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            <p className="skill-fact__stat">{homePage.skill2.skillStatistic}</p>
+                            <p className="skill-fact__stat-desc ">{homePage.skill2.skillStatisticLabel} </p>
                         </div>
-                        <p className="skill-container__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem id ipsum soluta distinctio expedita eos laborum voluptatum praesentium ratione iusto voluptatibus, deserunt accusamus impedit iure. Quis eius laboriosam facere consectetur?</p>
+                        <p className="skill-container__desc">{homePage.skill2.skillContent}</p>
                     </article>
                 </div>
             </section>
@@ -58,17 +62,29 @@ const index = () => {
                 <section className="solution__container">
                     <h2 className="solution-title">Solution &amp; <br />Service</h2>
                     <img className="solution__app-icon" src="/images/app-icon.png" alt="app logo" />
-                    <p>For the post-world of covid-19, your workforce needs updated solutions to adapt to the ever evolving technologies and methods we use to communicate with our co-workers and conduct business. Our solution is a app that will allow businesses to analyze the mental wellbeing of their employees. In addition, employees having the opportunity to voice their true opinions and be updated on how they can improve on the core skills, communication and empathy, which we at Mind Matter Mentality are dedicated to help solvings  </p>
+                    <p>{homePage.solutionSection.content}</p>
                 </section>
 
                 <section className="social__container">
-                    <h2 className="social-title">Connet <br /> to our <br /> Social Media</h2>
-                    <p>Be updated on our latest tips and posts on how to improve your communication and empathy skills to enhance the workflow of your team</p>
-                    <a href="https://instagram.com/mindmattermentality?utm_medium=copy_link" target="__blank"><RiInstagramLine className="instagram-link" /></a>
+                    <h2 className="social-title">Connect <br /> to our <br /> Social Media</h2>
+                    <p>{homePage.socialMediaSection.content}</p>
+                    <a href={homePage.socialMediaLink} target="__blank"><RiInstagramLine className="instagram-link" /></a>
                 </section>
             </div>
         </Layout>
     )
 }
 
-export default index
+export const getStaticProps = async (ctx) => {
+    try {
+        const res = await axios.get(`/home-page`);
+        const homePage = res.data;
+
+        return { props: { homePage } };
+    } catch (error) {
+        return { props: { error } };
+    };
+
+}
+
+export default Index

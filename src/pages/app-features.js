@@ -1,8 +1,9 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/resuable/SEO';
+import axios from '../constants/axios-backend';
 
-const AppFeatures = () => {
+const AppFeatures = ({ appFeaturesPage }) => {
     return (
         <Layout pageClassName="appFeaturesPage">
             <SEO title="App Features" />
@@ -16,7 +17,7 @@ const AppFeatures = () => {
                     <div className="feature-grid">
                         <div className="feature-content">
                             <h2 className="feature-title">Schedule a <br /> Therapy Call</h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam maiores iusto, ab maxime soluta dicta numquam ipsam blanditiis debitis voluptates dolores doloremque earum eaque quo culpa a ducimus eum alias.</p>
+                            <p>{appFeaturesPage.therapySectionText}</p>
                         </div>
 
                         <img className="therapyCall-iphone" src="/images/phoneTherapy.png" alt="" />
@@ -29,7 +30,7 @@ const AppFeatures = () => {
                     <div className="feature-grid">
                         <div className="feature-content">
                             <h2 className="feature-title">Drop <br /> Anoymous Chats</h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam maiores iusto, ab maxime soluta dicta numquam ipsam blanditiis debitis voluptates dolores doloremque earum eaque quo culpa a ducimus eum alias.</p>
+                            <p>{appFeaturesPage.chatsSectionText}</p>
                         </div>
 
                         <div>
@@ -46,7 +47,7 @@ const AppFeatures = () => {
                     <div className="feature-grid">
                         <div className="feature-content">
                             <h2 className="feature-title">Unique Brain = <br /> Unique Data </h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam maiores iusto, ab maxime soluta dicta numquam ipsam blanditiis debitis voluptates dolores doloremque earum eaque quo culpa a ducimus eum alias.</p>
+                            <p>{appFeaturesPage.statusReportSectionText}</p>
                         </div>
                         <img className="data-iphone" src="/images/phone-data.png" alt="" />
                     </div>
@@ -59,5 +60,18 @@ const AppFeatures = () => {
         </Layout>
     )
 }
+
+export const getStaticProps = async (ctx) => {
+    try {
+        const res = await axios.get(`/app-features`);
+        const appFeaturesPage = res.data;
+
+
+        return { props: { appFeaturesPage } };
+    } catch (error) {
+        return { props: { error } };
+    }
+}
+
 
 export default AppFeatures
