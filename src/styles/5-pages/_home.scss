@@ -6,7 +6,7 @@
 
     .jumbotron-overlay{
         @include square(100%);
-        background:rgba(white, .8);
+        background:rgba(white, .9);
         color:black;
     }
 
@@ -42,6 +42,11 @@
         font-size: 50px;
         color:rgb(112, 112, 112);
         margin-left:8px;
+    }
+
+    .jumbotron-link-btn{
+        @include btn($size: 'md',$bgColor:rgb(112, 112, 112));
+        margin-right:10px;
     }
 
     .app-features-btn{
@@ -146,7 +151,15 @@
         color:white;
     }
 
+    .app-features-btn__solution{
+        margin-top:40px;
+        display:inline-block;
+    }
+
     @include mq('med'){
+        .jumbotron{
+            height:80vh;
+        }
         .jumbotron-title{
             font-size:$font-xl;
         }
@@ -200,8 +213,8 @@
 
     @include mq('large'){
 
-        .jumbotron-social{
-            right: 20%;
+        .jumbotron-links{
+            right: 10%;
             bottom: 20%;
         }
         .solution-social__row{

@@ -44,7 +44,9 @@ const Index = (props) => {
                         </div>
 
                         <div className="jumbotron-links">
-                            <Link href="/app-features" className="app-features-btn">App Features</Link>
+
+                            <Link href="/app-features" className="jumbotron-link-btn">App Features</Link>
+                            <Link href="/contact" className="jumbotron-link-btn">Contact</Link>
                             <a href={homePage.socialMediaLink} target="__blank"><RiInstagramLine className="jumbotron-social" /></a>
                         </div>
 
@@ -52,7 +54,7 @@ const Index = (props) => {
 
                 </div>
 
-                <img className="jumbotron-bg" src="https://images.unsplash.com/photo-1619950835693-12c11cfeb60d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTMyfHxtZW50YWwlMjBoZWFsdGh8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="" />
+                <img className="jumbotron-bg" src="https://miro.medium.com/max/2625/1*SLP2ts4t4B-KKhuvfwIxtQ.jpeg" alt="" />
             </header>
 
             <section className="mission-container">
@@ -93,7 +95,7 @@ const Index = (props) => {
                     <h2 className="solution-title">Solution &amp; <br />Service</h2>
                     <img className="solution__app-icon" src="/images/app-icon.png" alt="app logo" />
                     <p>{homePage.solutionSection.content}</p>
-                    <Link href="/app-features" className="app-features-btn">App Features</Link>
+                    <Link href="/app-features" className="app-features-btn app-features-btn__solution">App Features</Link>
                 </section>
 
                 <section className="social__container">

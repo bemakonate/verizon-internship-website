@@ -10,7 +10,7 @@
         @include position($p:fixed,$top:0,$left:0,$zIndex:10);
         width:100%;
         background:white;
-        color:#75E88A;
+        color:#3c7246;
         height:$navbar-height;
         padding:0 5vw;
         box-shadow:0 0px 5px rgba(black, .5); 
@@ -26,7 +26,7 @@
     }
     
     .nav__links{
-        width:30vw;
+        width:40vw;
         display:grid;
         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
         height:100%;
@@ -44,7 +44,7 @@
 
 @include mq('large'){
     .nav__links{
-        width:20vw;
+        width:30vw;
         display:grid;
         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
         height:100%;

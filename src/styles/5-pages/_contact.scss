@@ -1,0 +1,75 @@
+.contactPage{
+    padding-bottom:40px;
+
+    .jumbotron{
+        height:60vh;
+        // text-align:center;
+        background:#63D590;
+        padding:40px 10vw;
+        position:relative;
+    }
+
+    .jumbotron-tagline{
+        font-size:20px;
+        font-weight:400;
+    }
+
+
+    .jumbotron-content{
+        text-align:center;
+        color:white;
+        h1{
+            color:white;
+        }
+    }
+
+    .contact-form{
+        width:90vw;
+        max-width: 600px;
+        padding:40px 20px;
+        background:white;
+        border-radius:6px;
+        box-shadow:0 0 5px rgba(black, .5);
+        position:absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top:60%;
+    }
+
+
+    .input-group{
+        display:flex;
+        flex-direction:column;
+        margin-bottom:20px;
+    }
+    .input-label{
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+    .input-val{    
+        border: none;
+        outline: none;
+        padding: 10px 15px;
+        color: rgb(70, 70, 70);
+        background: rgb(211, 211, 211);
+        border-radius: 3px;
+    }
+
+    .contact-message{
+        border: none;
+        outline: none;
+        color: rgb(70, 70, 70);
+        background: rgb(211, 211, 211);
+        padding:20px;
+        border-radius: 5px;
+        resize:none;
+    }
+
+    .contact-btn{
+        @include btn($size: 'lg');
+        width:100%;
+        margin-top:20px;
+        height:50px;
+    }
+
+}

@@ -9,7 +9,7 @@ const data = [
     },
     {
         label: 'Contact',
-        link: '/'
+        link: '/contact'
     },
 
 ]
