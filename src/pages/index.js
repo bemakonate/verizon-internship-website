@@ -6,6 +6,7 @@ import LoadingBackdrop from '../components/resuable/loadingBackdrop';
 import axios from '../constants/axios-backend';
 import Link from '../components/resuable/link';
 
+
 const homePage = {
     missionSection: {
         content: "Here at Mind Matter Mentality we are all about the people. We are dedicated to making sure your teams are well trained and mentally healthy. Our goal is to big more awareness to mental health within the workplace with the help of the private industry.If you chose us as your mental health consulting company, you will see a happier and more productive workforce",
@@ -27,8 +28,8 @@ const homePage = {
     },
     socialMediaSection: {
         content: "Be updated on our latest tips and posts on how to improve your communication and empathy skills to enhance the workflow of your team",
-        socialMediaLink: "https://www.instagram.com/mindmattermentality/?utm_medium=copy_link"
-    }
+    },
+    socialMediaLink: "https://www.instagram.com/mindmattermentality/?utm_medium=copy_link"
 }
 const Index = (props) => {
 

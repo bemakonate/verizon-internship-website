@@ -1,9 +1,11 @@
 import React from 'react'
 import Layout from '../components/layout'
+import SEO from '../components/resuable/SEO';
 
 const contact = () => {
     return (
         <Layout pageClassName="contactPage">
+            <SEO title="Contact" />
             <header className="jumbotron">
                 <div className="jumbotron-content global__container">
                     <h1>Contact Us</h1>
