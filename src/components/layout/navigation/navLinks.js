@@ -2,14 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 
 const data = [
-    // {
-    //     label: 'Home',
-    //     link: '/'
-    // },
+
     {
         label: 'App Features',
         link: '/app-features'
-    }
+    },
+    {
+        label: 'Contact',
+        link: '/'
+    },
+
 ]
 const navLinks = (props) => {
     return (

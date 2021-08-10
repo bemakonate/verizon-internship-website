@@ -30,12 +30,22 @@
         z-index:-1;
     }
 
+    .jumbotron-links{
+        @include flex($align:center);
+        @include position($p:absolute, $right: 10%, $bottom: 10%);
+        // position: absolute;
+        // right: 10%;
+        // bottom: 10%;
+    }
+
     .jumbotron-social{
-        position: absolute;
-        right: 10%;
-        bottom: 10%;
         font-size: 50px;
         color:rgb(112, 112, 112);
+        margin-left:8px;
+    }
+
+    .app-features-btn{
+        @include btn($size: 'md',$bgColor:#63D590);
     }
 
     .mission-container,

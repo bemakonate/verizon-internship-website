@@ -60,6 +60,8 @@ $chats-iphone-width: 380px;
         margin:0 auto; 
     }
 
+
+
     @include mq('med'){
         .jumbotron{
             @include flex($align:center);

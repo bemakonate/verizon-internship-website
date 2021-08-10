@@ -3,7 +3,13 @@ import Layout from '../components/layout'
 import SEO from '../components/resuable/SEO';
 import axios from '../constants/axios-backend';
 
-const AppFeatures = ({ appFeaturesPage }) => {
+
+const appFeaturesPage = {
+    therapySectionText: "Users will have the ability to build deeper connections through the use of anonymous chats with their co-workers. The use of anonymous chats will ensure that our users feel safe when expressing their true feelings and make sure the team is aware of their teammates' situations and hardships. Thus enhancing empathy, a core skill we are focused on improving. And building communication, another skill we value at Mind Matter Mentality.",
+    chatsSectionText: "Employees will also have the ability to access an online therapist through our platform to manage their mental health. Having a therapist readily available to them through a mobile device allows the employees easy accessibility to have a safe space to talk and the chance to release stress.",
+    statusReportSectionText: "Employees will also have the ability to view specific core metrics to improve their productivity and work life balance to make sure they are performing at their maximum capacity. This will give employers more insight on how to improve their workforce and see if they are properly taking care of the employees mental health.",
+}
+const AppFeatures = (props) => {
     return (
         <Layout pageClassName="appFeaturesPage">
             <SEO title="App Features" />
@@ -61,17 +67,17 @@ const AppFeatures = ({ appFeaturesPage }) => {
     )
 }
 
-export const getStaticProps = async (ctx) => {
-    try {
-        const res = await axios.get(`/app-features`);
-        const appFeaturesPage = res.data;
+// export const getStaticProps = async (ctx) => {
+//     try {
+//         const res = await axios.get(`/app-features`);
+//         const appFeaturesPage = res.data;
 
 
-        return { props: { appFeaturesPage } };
-    } catch (error) {
-        return { props: { error } };
-    }
-}
+//         return { props: { appFeaturesPage } };
+//     } catch (error) {
+//         return { props: { error } };
+//     }
+// }
 
 
 export default AppFeatures
